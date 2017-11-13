@@ -23,6 +23,7 @@ data.sel=aggregate(data.sel, by=groupVar,FUN=mean)
 data.sel.dist=distinct(data.sel, ActivityStartDate,MonitoringLocationIdentifier,CharacteristicName,.keep_all = T)
 
 
+
 dataWide<- spread(data.sel.dist,CharacteristicName, ResultMeasureValue)
 
 dataWide$Phosphorus=LtoN(dataWide$Phosphorus)
